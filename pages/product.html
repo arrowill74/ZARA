@@ -18,7 +18,6 @@
     <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-    <link href="../dist/css/product.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -177,7 +176,7 @@
                                         <td>3000</td>
                                         <td>2500</td>
                                         <td align="center">
-                                            <button type="button" onclick="showDialog();" class="btn btn-primary btn-xs">Ship</button>
+                                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Ship</button>
                                         </td>
                                     </tr>
                                     <tr class="even gradeC">
@@ -188,13 +187,56 @@
                                         <td>3000</td>
                                         <td>2500</td>
                                         <td align="center">
-                                            <button type="button" onclick="showDialog();" class="btn btn-primary btn-xs">Ship</button>
+                                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Ship</button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.panel-body -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" align="center" id="myModalLabel">Allocate Shipment</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p align="right">Remain Inventory: <span>10000</span></p>
+                                        <table width="100%" class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Branch ID</th>
+                                                    <th>Shipping Quantity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>TAIWAN0001</td>
+                                                    <td>5000</td>
+                                                    <!-- <input class="form-control" placeholder="Enter Shipping Quantity"> -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <div class="col-lg-4" align="center">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                        <div class="col-lg-4" align="center">
+                                        <button type="button" onclick="alert('The Quatity above is the best distribution. Are you sure to change it?')" class="btn btn-danger">Edit</button>
+                                        </div>
+                                        <div class="col-lg-4" align="center">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
                     </div>
                     <!-- /.panel -->
                 </div>
@@ -202,44 +244,6 @@
             </div>
         </div>
         <!-- /#page-wrapper -->
-    </div>
-    <div id="dialog"></div>
-    <div id="msg" class="form">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h4 align="center">Allocate Shipment</h4>
-            </div>
-            <div class="panel-body">
-                <p align="right">Remain Inventory: <span>10000</span></p>
-                <table width="100%" class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>Branch ID</th>
-                            <th>Shipping Quantity</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>TAIWAN0001</td>
-                            <td>5000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="panel-footer">
-                <div class="row">
-                    <div class="col-lg-4" align="center">
-                        <button type="button" onclick="alert('The Quatity above is the best distribution. Are you sure to change it?')" class="btn btn-primary ">Edit</button>
-                    </div>
-                    <div class="col-lg-4 " align="center ">
-                        <button type="button " class="btn btn-primary" onclick="closeDialog()">Cancel</button>
-                    </div>
-                    <div class="col-lg-4" align="center">
-                        <button type="button" class="btn btn-primary" onclick="closeDialog()">Confirm</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
@@ -254,7 +258,6 @@
     <script src="../vendor/datatables-responsive/dataTables.responsive.js "></script>
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js "></script>
-    <script src="../dist/js/product.js "></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
