@@ -1100,7 +1100,6 @@ $(function() {
 });
 
 //Flot Moving Line Chart
-
 $(function() {
 
     var container = $("#flot-line-chart-moving");
