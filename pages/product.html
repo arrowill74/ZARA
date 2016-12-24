@@ -84,7 +84,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -203,21 +202,20 @@
                                             <tbody>
                                                 <tr>
                                                     <td>TAIWAN0001</td>
-                                                    <td>5000</td>
-                                                    <!-- <input class="form-control" placeholder="Enter Shipping Quantity"> -->
+                                                    <td class="shipNum">5000</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="modal-footer">
-                                    <div class="col-lg-4" align="center">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        <div class="col-lg-4" align="center">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                         </div>
                                         <div class="col-lg-4" align="center">
-                                        <button type="button" onclick="alert('The Quatity above is the best distribution. Are you sure to change it?')" class="btn btn-danger">Edit</button>
+                                            <button type="button" class="btn btn-danger edit">Edit</button>
                                         </div>
                                         <div class="col-lg-4" align="center">
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
                                         </div>
                                     </div>
                                 </div>
@@ -253,6 +251,14 @@
         $('#dataTables-example').DataTable({
             responsive: true
         });
+        // $( ".shipNum" ).append("<input class = 'form-control' >");
+    });
+    </script>
+    <!-- onclick edit event -->
+    <script>
+    $('.edit').click(function() {
+        alert('The Quatity above is the best distribution. Are you sure to change it?');
+        $(".shipNum").append("<input class = 'form-control' placeholder = 'Enter Shipping Quantity '>");
     });
     </script>
 </body>
